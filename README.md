@@ -1,9 +1,9 @@
-# TimesNAS
-This is the official implementation of the ***Time Series-Aware Zero-Shot Neural Architecture Search for General Time-Series Analysis*** paper _Under Review_ by Neural Networks
+# TFAS
+This is the official implementation of the ***Zero-Shot NAS for General Time-Series Analysis with Time-Frequency Aware Scoring*** paper _Under Review_ by ECML PKDD 2025 (Journal Track)
 <!-- [[Paper]()]] -->
 
 ## Abstract
-Designing effective neural networks from scratch for various time-series analysis tasks, such as activity recognition, fault detection, and traffic forecasting, is time-consuming and heavily relies on human labor. This paper thereby aims to answer the following question: how to build a unified zero-shot neural architecture search framework that effectively designs neural ar- chitectures for a variety of tasks and input time series? However, building a universal framework for different tasks comes with challenges. First, we need a unified backbone search space that performs well across diverse analysis tasks. Second, we need a time series-aware zero-shot proxy that consistently correlates with the downstream performance across different characteristics of time-series datasets. To address these challenges, for the first time, we propose a framework for general Time-series analysis with zero-shot Neural Architecture Search named TimesNAS. TimesNAS extends a state-of-the-art foundation model into a two- level search space and enhances a zero-shot proxy by exploiting decomposed time-series properties. Empirically, we show that the architectures found by TimesNAS gain improvement up to 23.6% over state-of-the-art hand-crafted baselines in five mainstream time-series data mining tasks, including short- and long-term forecasting, classification, anomaly detection, and imputation.
+Designing effective neural networks from scratch for various time-series analysis tasks, such as activity recognition, fault detection, and traffic forecasting, is time-consuming and heavily relies on human labor. To reduce the reliance on human labor, recent studies adopt neural architecture search (NAS) to design neural networks for time series automatically. Still, existing NAS frameworks for time series only focus on one specific analysis, such as forecasting and classification, with expensive search methods. This paper therefore aims to build a unified zero-shot NAS framework that effectively searches neural architectures for a variety of tasks and time-series data. However, to build a general framework for different tasks, we need a zero-shot proxy that consistently correlates with the downstream performance across different characteristics of time-series datasets. To address these challenges, we propose a zero-shot NAS framework with novel Time-Frequency Aware Scoring for general time-series analysis, named TFAS. To incorporate TFAS into existing foundation time-series models, we adopt time-frequency decomposition methods and introduce the concept of augmented architecture to the foundation models. This augmented architecture enables the zero-shot proxy to be aware of the decomposed time and frequency information, resulting a more accurate estimation of downstream performance for particular datasets. Empirically, we show that the architectures found by TFAS gain improvement of up to 23.6% over state-of-the-art hand-crafted baselines in five mainstream time-series data mining tasks, including short- and long-term forecasting, classification, anomaly detection, and imputation.
 
 ## Benchmark Datasets
 | **Downstream Analysis Tasks** | **Benchmarks** | **Evaluation Metrics** | **Series Length** |
@@ -75,10 +75,10 @@ pip install -r requirements.txt
 # run search for classification task on JapaneseVowels dataset
 python -u searcher.py --task_name classification --gpu 3 --population_size 1000 --data_name JapaneseVowels
 # run the found architecture training and testing
-python -u trainer.py --task_name classification --gpu 0 --population_size 1000 --method_name TimesNAS --data_name JapaneseVowels
+python -u trainer.py --task_name classification --gpu 0 --population_size 1000 --method_name TFAS --data_name JapaneseVowels
 ```
 
-### Notebook Example for Demonstration: `TimesNAS_Example_Demo.ipynb` *(Long-term Forecasting Task)* with `N = 100`
+### Notebook Example for Demonstration: `TFAS_Example_Demo.ipynb` *(Long-term Forecasting Task)* with `N = 100`
 
 ## Citation
 ```
