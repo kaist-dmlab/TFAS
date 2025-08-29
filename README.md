@@ -1,5 +1,5 @@
 # TFAS
-This is the official implementation of the ***Zero-Shot NAS for General Time-Series Analysis with Time-Frequency Aware Scoring*** paper _accepted_ by ECML PKDD 2025 (Journal Track) [[Paper]] [[Slides]]
+This is the official implementation of the ***Zero-Shot NAS for General Time-Series Analysis with Time-Frequency Aware Scoring*** paper _accepted_ by ECML PKDD 2025 (Journal Track) [[Paper](https://link.springer.com/article/10.1007/s10994-025-06832-y)] [[Slides]]
 <!-- [[Paper]()]] -->
 
 ## Abstract
