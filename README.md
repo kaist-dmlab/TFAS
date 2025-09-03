@@ -81,8 +81,17 @@ python -u trainer.py --task_name classification --gpu 0 --population_size 1000 -
 ### Notebook Example for Demonstration: `TFAS_Example_Demo.ipynb` *(Long-term Forecasting Task)* with `N = 100`
 
 ## Citation
-```
-TBD
+```bibtex
+@article{trirat2025tfas,
+  title={TFAS: zero-shot NAS for general time-series analysis with time-frequency aware scoring},
+  author={Trirat, Patara and Lee, Jae-Gil},
+  journal={Machine Learning},
+  volume={114},
+  number={10},
+  pages={223},
+  year={2025},
+  publisher={Springer}
+}
 ```
 
 ## Acknowledgement
